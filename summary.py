@@ -133,7 +133,6 @@ def get_system_info():
                         if base_device.split("/")[-1] in line:
                             # Split by multiple spaces
                             line = re.sub(r"^[^\s]+\s+[^\s]+\s+[^\s]+\s+", "x  x  x  ", line)
-                            print(line)
                             parts = re.split(r"\s{2,}", line.strip())
                             if len(parts) >= 4:
                                 info["Drive Model"] = parts[3]  # Model column
@@ -171,7 +170,6 @@ def get_system_info():
                         ["sudo", "lshw", "-class", "disk", "-class", "storage"],
                         stderr=subprocess.DEVNULL,
                     ).decode()
-                    print(base_device)
                     # Parse lshw output for NVMe/disk info
                     finish_up = False
                     for line in lshw.split("\n"):
