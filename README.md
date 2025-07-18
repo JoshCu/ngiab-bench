@@ -16,3 +16,4 @@ docker run -it -v ~/.ngiab/bench:/ngen/bench ngiab-bench
 # the summary.py will be run in the container but it might need rerunning externally if it didn't pick up the system hardware properly
 # it tries to use dmidecode nvme-cli smartctl lshw, install as many as you like
 uv run --with pandas --with psutil summary.py
+```
